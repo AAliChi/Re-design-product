@@ -1,0 +1,124 @@
+/*
+ * ThriveWell design tokens
+ * ------------------------------------------------------------------
+ * This is the ONE place that defines how ThriveWell looks: colours,
+ * corner radius and fonts. Every shadcn/ui component and every screen
+ * reads from these variables, so changing a value here restyles the
+ * whole app.
+ *
+ * Want a different brand? Change the values in :root below.
+ */
+@import "tailwindcss";
+@import "tw-animate-css";
+@import "@fontsource-variable/inter";
+@import "@fontsource-variable/bricolage-grotesque";
+
+:root {
+  /* Corner radius. Cards use radius + 4px, buttons use radius - 2px. */
+  --radius: 1rem;
+
+  /* Page + surfaces */
+  --background: #f5f3ee;           /* warm off-white page */
+  --foreground: #16181d;           /* near-black ink */
+  --card: #ffffff;
+  --card-foreground: #16181d;
+  --popover: #ffffff;
+  --popover-foreground: #16181d;
+  --muted: #ece9e2;
+  --muted-foreground: #62666e;
+  --border: #e5e1d8;
+  --input: #ddd8cd;
+  --ring: #1d6b45;
+
+  /* Primary actions are ink-black pills (see the "Add" button reference) */
+  --primary: #16181d;
+  --primary-foreground: #ffffff;
+  --secondary: #ece9e2;
+  --secondary-foreground: #16181d;
+  --accent: #ece9e2;
+  --accent-foreground: #16181d;
+  --destructive: #c2362b;
+
+  /* ThriveWell brand + category colours */
+  --brand: #1d6b45;                /* forest green — the ThriveWell colour */
+  --brand-foreground: #ffffff;
+  --brand-soft: #dcefe2;
+  --energy: #ff5b22;               /* activity / workouts */
+  --energy-soft: #ffe6da;
+  --calm: #7b72e0;                 /* rest / mindfulness */
+  --calm-soft: #ebe9fd;
+  --sky: #2f80c4;                  /* hydration / meals */
+  --sky-soft: #e0eefa;
+  --rose: #d23a63;                 /* heart / coaching */
+  --rose-soft: #fbe3ea;
+
+  /* Charts */
+  --chart-1: #1d6b45;
+  --chart-2: #ff5b22;
+  --chart-3: #7b72e0;
+  --chart-4: #2f80c4;
+  --chart-5: #d23a63;
+}
+
+@theme inline {
+  --font-sans: "Inter Variable", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Bricolage Grotesque Variable", "Inter Variable", ui-sans-serif, sans-serif;
+
+  --radius-sm: calc(var(--radius) - 6px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --radius-2xl: calc(var(--radius) + 10px);
+
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+
+  --color-brand: var(--brand);
+  --color-brand-foreground: var(--brand-foreground);
+  --color-brand-soft: var(--brand-soft);
+  --color-energy: var(--energy);
+  --color-energy-soft: var(--energy-soft);
+  --color-calm: var(--calm);
+  --color-calm-soft: var(--calm-soft);
+  --color-sky: var(--sky);
+  --color-sky-soft: var(--sky-soft);
+  --color-rose: var(--rose);
+  --color-rose-soft: var(--rose-soft);
+
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  html {
+    -webkit-tap-highlight-color: transparent;
+  }
+  body {
+    @apply bg-background text-foreground font-sans antialiased;
+  }
+  h1, h2, h3 {
+    @apply font-display tracking-tight;
+  }
+}

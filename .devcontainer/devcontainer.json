@@ -1,0 +1,10 @@
+{
+  "name": "ThriveWell Re:Design",
+  "image": "mcr.microsoft.com/devcontainers/javascript-node:22",
+  "postCreateCommand": "npm install",
+  "postAttachCommand": "npm run dev",
+  "forwardPorts": [5173],
+  "portsAttributes": {
+    "5173": { "label": "ThriveWell app", "onAutoForward": "openPreview" }
+  }
+}
